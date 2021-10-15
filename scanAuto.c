@@ -216,14 +216,14 @@ int goToThinnest(oi_t *sensor_data, int move){
 
     numObjs = scanObjs(objectsList, numObjs, angle);
 
-    //turn 180
-    turnAuto(180, sensor_data);
+    //turn 180, this function will turn the robot to the degree 270 from 0 which is where the scanner starts directly to the right.
+    turnAuto(270, sensor_data);
 
     angle = 180;
     numObjs = scanObjs(objectsList, numObjs, angle);
         
     //turn 180
-    turnAuto(180, sensor_data);
+    turnAuto(270, sensor_data);
 
     char toPutty[100];
 
