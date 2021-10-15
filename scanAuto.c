@@ -87,7 +87,7 @@ objectBuild * parseData(int beginAngle, int endAngle, double beginDist, double e
     double widthData;
 
    objAngleData = (beginAngle + endAngle) /2;                              // Average angle to object
-   widthData = (objDistData - objAngleData) * (PI/180) * ((beginDist+ endDist)/2);       // calculate width using Arc = theta × (PI/180) × r
+   widthData = (objDistData - objAngleData) * (PI/180) * ((beginDist+ endDist)/2);       // calculate width using Arc = theta Ã— (PI/180) Ã— r
    objDistData =  sqrt( abs(  (((beginDist + endDist)/2) * ((beginDist + endDist)/2)) - (widthData*widthData/4)));
 
    objectBuild ret;
@@ -221,6 +221,9 @@ int goToThinnest(oi_t *sensor_data, int move){
 
     angle = 180;
     numObjs = scanObjs(objectsList, numObjs, angle);
+        
+    //turn 180
+    turnAuto(180, sensor_data);
 
     char toPutty[100];
 
